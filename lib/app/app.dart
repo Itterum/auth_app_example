@@ -12,15 +12,17 @@ class App extends StatelessWidget {
       builder: (context, themeMode, _) {
         return MaterialApp.router(
           title: 'Auth App',
-          theme: ThemeData(
-            colorScheme: const ColorScheme.light(
-              primary: Colors.blueAccent,
+          theme: ThemeData.from(
+            colorScheme: ColorScheme.fromSeed(
+              seedColor: Colors.blueAccent,
+              brightness: Brightness.light,
             ),
             useMaterial3: true,
           ),
-          darkTheme: ThemeData(
-            colorScheme: const ColorScheme.dark(
-              primary: Colors.blueAccent,
+          darkTheme: ThemeData.from(
+            colorScheme: ColorScheme.fromSeed(
+              seedColor: Colors.blueAccent,
+              brightness: Brightness.dark,
             ),
             useMaterial3: true,
           ),
