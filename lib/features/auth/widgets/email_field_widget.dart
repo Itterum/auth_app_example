@@ -12,7 +12,7 @@ class EmailFieldWidget extends StatelessWidget {
         ),
         labelText: 'Email',
         prefixIcon: Icon(
-          Icons.email,
+          Icons.email_outlined,
           color: Theme.of(context).colorScheme.primary,
         ),
       ),

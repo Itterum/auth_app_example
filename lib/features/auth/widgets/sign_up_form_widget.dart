@@ -15,14 +15,29 @@ class SignUpFormWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Form(
       key: _formKey,
-      child: const Column(
+      child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          FormTitleWidget(title: 'Sign Up'),
-          SizedBox(height: 16),
-          EmailFieldWidget(),
-          SizedBox(height: 16),
-          SignUpButtonWidget(),
+          const FormTitleWidget(title: 'Sign Up'),
+          const SizedBox(height: 16),
+          const EmailFieldWidget(),
+          const SizedBox(height: 16),
+          SignUpButtonWidget(
+            onPressed: () {
+              if (_formKey.currentState!.validate()) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('Processing Data')),
+                );
+              }
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Theme.of(context).colorScheme.primary,
+              foregroundColor: Theme.of(context).colorScheme.onPrimary,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8.0),
+              ),
+            ),
+          ),
         ],
       ),
     );
