@@ -1,4 +1,5 @@
 import 'package:crud_flutter_example/features/auth/widgets/sign_up_form_widget.dart';
+import 'package:crud_flutter_example/widgets/base_scaffold_widget.dart';
 import 'package:flutter/material.dart';
 
 class SignUpPage extends StatefulWidget {
@@ -14,11 +15,8 @@ class SignUpPageState extends State<SignUpPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(_title),
-      ),
+    return BaseScaffoldWidget(
+      title: _title,
       body: Container(
         padding: const EdgeInsets.all(48),
         width: double.infinity,
