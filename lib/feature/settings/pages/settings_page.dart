@@ -1,7 +1,7 @@
-import 'package:crud_flutter_example/features/settings/widgets/profile_card_widget.dart';
-import 'package:crud_flutter_example/features/settings/widgets/settings_item_card_widget.dart';
-import 'package:crud_flutter_example/features/settings/widgets/sign_out_button_widget.dart';
-import 'package:crud_flutter_example/widgets/base_scaffold_widget.dart';
+import 'package:crud_flutter_example/core/presentation/base_scaffold_widget.dart';
+import 'package:crud_flutter_example/feature/settings/widgets/profile_card_widget.dart';
+import 'package:crud_flutter_example/feature/settings/widgets/settings_item_card_widget.dart';
+import 'package:crud_flutter_example/feature/settings/widgets/sign_out_button_widget.dart';
 import 'package:flutter/material.dart';
 
 class SettingsPage extends StatefulWidget {

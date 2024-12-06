@@ -1,4 +1,4 @@
-import 'package:crud_flutter_example/features/settings/widgets/theme_dialog_widget.dart';
+import 'package:crud_flutter_example/feature/settings/widgets/theme_dialog_widget.dart';
 import 'package:flutter/material.dart';
 
 class SettingGroupItems extends StatelessWidget {

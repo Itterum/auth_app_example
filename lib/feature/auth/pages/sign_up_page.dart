@@ -1,5 +1,5 @@
-import 'package:crud_flutter_example/features/auth/widgets/sign_up_form_widget.dart';
-import 'package:crud_flutter_example/widgets/base_scaffold_widget.dart';
+import 'package:crud_flutter_example/core/presentation/base_scaffold_widget.dart';
+import 'package:crud_flutter_example/feature/auth/widgets/sign_up_form_widget.dart';
 import 'package:flutter/material.dart';
 
 class SignUpPage extends StatefulWidget {

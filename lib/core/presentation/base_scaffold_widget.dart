@@ -31,7 +31,7 @@ class BaseScaffoldWidget extends StatelessWidget {
                   onPressed: () => context.go('/settings'),
                 ),
               ]
-            : null,
+            : <Widget>[Container()],
       ),
       body: _body,
       floatingActionButton: _floatingActionButton,
