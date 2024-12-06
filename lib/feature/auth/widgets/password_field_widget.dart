@@ -1,3 +1,4 @@
+import 'package:crud_flutter_example/core/presentation/base_input_widget.dart';
 import 'package:flutter/material.dart';
 
 class PasswordFieldWidget extends StatefulWidget {
@@ -12,29 +13,23 @@ class _PasswordFieldWidgetState extends State<PasswordFieldWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      decoration: InputDecoration(
-        border: const OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(8.0)),
-        ),
-        labelText: 'Password',
-        prefixIcon: Icon(
-          Icons.lock_outline,
-          color: Theme.of(context).colorScheme.primary,
-        ),
-        suffixIcon: IconButton(
-          icon: Icon(
-            _obscureText ? Icons.visibility : Icons.visibility_off,
-            color: Colors.grey,
-          ),
-          onPressed: () {
-            setState(() {
-              _obscureText = !_obscureText;
-            });
-          },
-        ),
+    return BaseInputFieldWidget(
+      labelText: 'Password',
+      prefixIcon: Icon(
+        Icons.lock_outline,
+        color: Theme.of(context).colorScheme.primary,
       ),
-      autovalidateMode: AutovalidateMode.onUserInteraction,
+      suffixIcon: IconButton(
+        icon: Icon(
+          _obscureText ? Icons.visibility : Icons.visibility_off,
+          color: Colors.grey,
+        ),
+        onPressed: () {
+          setState(() {
+            _obscureText = !_obscureText;
+          });
+        },
+      ),
       obscureText: _obscureText,
       validator: (value) {
         if (value == null || value.isEmpty) {

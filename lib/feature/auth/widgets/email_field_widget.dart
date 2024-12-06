@@ -1,3 +1,4 @@
+import 'package:crud_flutter_example/core/presentation/base_input_widget.dart';
 import 'package:flutter/material.dart';
 
 class EmailFieldWidget extends StatelessWidget {
@@ -5,24 +6,18 @@ class EmailFieldWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      decoration: InputDecoration(
-        border: const OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(8.0)),
-        ),
-        labelText: 'Email',
-        prefixIcon: Icon(
-          Icons.email_outlined,
-          color: Theme.of(context).colorScheme.primary,
-        ),
+    return BaseInputFieldWidget(
+      labelText: 'Email',
+      prefixIcon: Icon(
+        Icons.email_outlined,
+        color: Theme.of(context).colorScheme.primary,
       ),
-      autovalidateMode: AutovalidateMode.onUserInteraction,
       validator: (value) {
         if (value == null || value.isEmpty) {
           return 'Please enter your email';
         }
 
-        const emailRegex = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$';
+        const emailRegex = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\$';
 
         if (!RegExp(emailRegex).hasMatch(value)) {
           return 'Please enter a valid email address';
@@ -30,6 +25,7 @@ class EmailFieldWidget extends StatelessWidget {
 
         return null;
       },
+      keyboardType: TextInputType.emailAddress,
     );
   }
 }
